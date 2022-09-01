@@ -325,6 +325,8 @@ async function run() {
       sourceAccountId = await exportAccountId(maskAccountId, region);
     }
 
+    core.info("Assume Role...");
+    
     // Get role credentials if configured to do so
     if (roleToAssume) {
       const roleCredentials = await retryAndBackoff(
