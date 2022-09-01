@@ -40,6 +40,8 @@ async function assumeRole(params) {
       'Missing required environment value. Are you running in GitHub Actions?'
   );
 
+  core.info(GITHUB_REPOSITORY);
+  
   const sts = getStsClient(region);
 
   let roleArn = roleToAssume;
